@@ -73,12 +73,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(196, 9);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(247, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(314, 42);
+            this.label1.Size = new System.Drawing.Size(178, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Manage Employee";
+            this.label1.Text = "Skills international";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Employeeregi
             // 
@@ -91,13 +92,13 @@
             this.Employeeregi.Controls.Add(this.departmentgb);
             this.Employeeregi.Controls.Add(this.contactgb);
             this.Employeeregi.Controls.Add(this.Basicgb);
-            this.Employeeregi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Employeeregi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.Employeeregi.Location = new System.Drawing.Point(12, 72);
             this.Employeeregi.Name = "Employeeregi";
             this.Employeeregi.Size = new System.Drawing.Size(637, 622);
             this.Employeeregi.TabIndex = 1;
             this.Employeeregi.TabStop = false;
-            this.Employeeregi.Text = "Employee Registration";
+            this.Employeeregi.Text = "Student Registration";
             // 
             // Deletebtn
             // 
@@ -151,12 +152,12 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label2.Location = new System.Drawing.Point(50, 38);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 13);
+            this.label2.Size = new System.Drawing.Size(41, 13);
             this.label2.TabIndex = 0;
-            this.label2.Text = "EmployeeNO";
+            this.label2.Text = "RegNo";
             // 
             // departmentgb
             // 
@@ -171,7 +172,7 @@
             this.departmentgb.Size = new System.Drawing.Size(531, 100);
             this.departmentgb.TabIndex = 0;
             this.departmentgb.TabStop = false;
-            this.departmentgb.Text = "Department Details";
+            this.departmentgb.Text = "Parent details";
             // 
             // emptype
             // 
@@ -199,27 +200,27 @@
             this.Emptypelbl.AutoSize = true;
             this.Emptypelbl.Location = new System.Drawing.Point(35, 77);
             this.Emptypelbl.Name = "Emptypelbl";
-            this.Emptypelbl.Size = new System.Drawing.Size(93, 13);
+            this.Emptypelbl.Size = new System.Drawing.Size(84, 13);
             this.Emptypelbl.TabIndex = 0;
-            this.Emptypelbl.Text = "Employee Type";
+            this.Emptypelbl.Text = "Contact Number";
             // 
             // desilbl
             // 
             this.desilbl.AutoSize = true;
             this.desilbl.Location = new System.Drawing.Point(35, 48);
             this.desilbl.Name = "desilbl";
-            this.desilbl.Size = new System.Drawing.Size(74, 13);
+            this.desilbl.Size = new System.Drawing.Size(25, 13);
             this.desilbl.TabIndex = 0;
-            this.desilbl.Text = "Designation";
+            this.desilbl.Text = "NIC";
             // 
             // Departmentnmlbl
             // 
             this.Departmentnmlbl.AutoSize = true;
             this.Departmentnmlbl.Location = new System.Drawing.Point(35, 22);
             this.Departmentnmlbl.Name = "Departmentnmlbl";
-            this.Departmentnmlbl.Size = new System.Drawing.Size(108, 13);
+            this.Departmentnmlbl.Size = new System.Drawing.Size(69, 13);
             this.Departmentnmlbl.TabIndex = 0;
-            this.Departmentnmlbl.Text = "Department Name";
+            this.Departmentnmlbl.Text = "Parent Name";
             // 
             // contactgb
             // 
@@ -271,7 +272,7 @@
             this.HPlbl.AutoSize = true;
             this.HPlbl.Location = new System.Drawing.Point(293, 118);
             this.HPlbl.Name = "HPlbl";
-            this.HPlbl.Size = new System.Drawing.Size(77, 13);
+            this.HPlbl.Size = new System.Drawing.Size(67, 13);
             this.HPlbl.TabIndex = 0;
             this.HPlbl.Text = "home Phone";
             // 
@@ -280,7 +281,7 @@
             this.MPlbl.AutoSize = true;
             this.MPlbl.Location = new System.Drawing.Point(35, 114);
             this.MPlbl.Name = "MPlbl";
-            this.MPlbl.Size = new System.Drawing.Size(84, 13);
+            this.MPlbl.Size = new System.Drawing.Size(72, 13);
             this.MPlbl.TabIndex = 0;
             this.MPlbl.Text = "Mobile Phone";
             // 
@@ -289,7 +290,7 @@
             this.Maillbl.AutoSize = true;
             this.Maillbl.Location = new System.Drawing.Point(35, 71);
             this.Maillbl.Name = "Maillbl";
-            this.Maillbl.Size = new System.Drawing.Size(37, 13);
+            this.Maillbl.Size = new System.Drawing.Size(32, 13);
             this.Maillbl.TabIndex = 0;
             this.Maillbl.Text = "Email";
             // 
@@ -298,7 +299,7 @@
             this.Addilbl.AutoSize = true;
             this.Addilbl.Location = new System.Drawing.Point(35, 37);
             this.Addilbl.Name = "Addilbl";
-            this.Addilbl.Size = new System.Drawing.Size(52, 13);
+            this.Addilbl.Size = new System.Drawing.Size(45, 13);
             this.Addilbl.TabIndex = 0;
             this.Addilbl.Text = "Address";
             // 
@@ -325,7 +326,7 @@
             this.SEXf.AutoSize = true;
             this.SEXf.Location = new System.Drawing.Point(252, 150);
             this.SEXf.Name = "SEXf";
-            this.SEXf.Size = new System.Drawing.Size(65, 17);
+            this.SEXf.Size = new System.Drawing.Size(59, 17);
             this.SEXf.TabIndex = 2;
             this.SEXf.TabStop = true;
             this.SEXf.Text = "Female";
@@ -336,7 +337,7 @@
             this.SEXm.AutoSize = true;
             this.SEXm.Location = new System.Drawing.Point(148, 150);
             this.SEXm.Name = "SEXm";
-            this.SEXm.Size = new System.Drawing.Size(52, 17);
+            this.SEXm.Size = new System.Drawing.Size(48, 17);
             this.SEXm.TabIndex = 2;
             this.SEXm.TabStop = true;
             this.SEXm.Text = "Male";
@@ -368,7 +369,7 @@
             this.sexlbl.AutoSize = true;
             this.sexlbl.Location = new System.Drawing.Point(35, 150);
             this.sexlbl.Name = "sexlbl";
-            this.sexlbl.Size = new System.Drawing.Size(28, 13);
+            this.sexlbl.Size = new System.Drawing.Size(25, 13);
             this.sexlbl.TabIndex = 0;
             this.sexlbl.Text = "Sex";
             // 
@@ -377,7 +378,7 @@
             this.DOBlbl.AutoSize = true;
             this.DOBlbl.Location = new System.Drawing.Point(35, 108);
             this.DOBlbl.Name = "DOBlbl";
-            this.DOBlbl.Size = new System.Drawing.Size(64, 13);
+            this.DOBlbl.Size = new System.Drawing.Size(54, 13);
             this.DOBlbl.TabIndex = 0;
             this.DOBlbl.Text = "Birth Date";
             // 
@@ -386,7 +387,7 @@
             this.lnamelbl.AutoSize = true;
             this.lnamelbl.Location = new System.Drawing.Point(35, 75);
             this.lnamelbl.Name = "lnamelbl";
-            this.lnamelbl.Size = new System.Drawing.Size(63, 13);
+            this.lnamelbl.Size = new System.Drawing.Size(54, 13);
             this.lnamelbl.TabIndex = 0;
             this.lnamelbl.Text = "last Name";
             // 
@@ -395,7 +396,7 @@
             this.fnamelbl.AutoSize = true;
             this.fnamelbl.Location = new System.Drawing.Point(35, 49);
             this.fnamelbl.Name = "fnamelbl";
-            this.fnamelbl.Size = new System.Drawing.Size(67, 13);
+            this.fnamelbl.Size = new System.Drawing.Size(57, 13);
             this.fnamelbl.TabIndex = 0;
             this.fnamelbl.Text = "First Name";
             // 

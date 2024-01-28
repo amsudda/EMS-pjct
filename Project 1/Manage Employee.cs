@@ -269,6 +269,10 @@ namespace Project_1
             Deletebtn.Enabled = false;
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
