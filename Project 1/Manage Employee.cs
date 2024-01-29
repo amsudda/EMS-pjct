@@ -18,12 +18,12 @@ namespace Project_1
         {
             InitializeComponent();
         }
-         
-        SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=""EMS for pjct"";Integrated Security=True");
+
+        SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=Student_DB;Integrated Security=True");
         private void Manage_Employee_Load(object sender, EventArgs e)
         {
             conn.Open();
-            string query_select = " SELECT * FROM EMPmanagetbl";
+            string query_select = " SELECT * FROM studentdetails";
             SqlCommand cmnd = new SqlCommand(query_select, conn);
             SqlDataReader row = cmnd.ExecuteReader();
             EmpNOcb.Items.Add("New Register");
@@ -48,12 +48,12 @@ namespace Project_1
                 // Validate and parse phone numbers
                 if (int.TryParse(MPno.Text, out int mobilePhone) && int.TryParse(HPno.Text, out int homePhone))
                 {
-                    string departmentName = Dname.Text;
-                    string designation = Desitxt.Text;
-                    string employeeType = emptype.Text;
+                    string ParentName = Dname.Text;
+                    string NIC = Desitxt.Text;
+                    string Contactno = emptype.Text;
 
-                    string  query_insert = "INSERT INTO EMPmanagetbl (firstname, lastname, DOB, gender, address, email, mobilephone, homephone, departmentName, designation, employeeType) " +
-                                           "VALUES (@FirstName, @LastName, @DOB, @Gender, @Address, @Email, @MobilePhone, @HomePhone, @DepartmentName, @Designation, @EmployeeType)";
+                    string  query_insert = "INSERT INTO studentdetails (firstname, lastname, dob, gender, address, email, mobilephone, homephone, ParentName, NIC, Contactno) " +
+                                           "VALUES (@FirstName, @LastName, @DOB, @Gender, @Address, @Email, @MobilePhone, @HomePhone, @ParentName, @NIC, @Contactno)";
                     ;
 
                     conn.Open();
@@ -67,13 +67,13 @@ namespace Project_1
                         cmnd.Parameters.AddWithValue("@Email", email);
                         cmnd.Parameters.AddWithValue("@Mobilephone", mobilePhone);
                         cmnd.Parameters.AddWithValue("@Homephone", homePhone);
-                        cmnd.Parameters.AddWithValue("@DepartmentName", departmentName);
-                        cmnd.Parameters.AddWithValue("@Designation", designation);
-                        cmnd.Parameters.AddWithValue("@EmployeeType", employeeType);
+                        cmnd.Parameters.AddWithValue("@ParentName", ParentName);
+                        cmnd.Parameters.AddWithValue("@NIC", NIC);
+                        cmnd.Parameters.AddWithValue("@Contactno", Contactno);
 
                         cmnd.ExecuteNonQuery();
                     }
-                    MessageBox.Show("Record Added Successfully!", "Registered Employee!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Record Added Successfully!", "Registered Student!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -114,10 +114,10 @@ namespace Project_1
                 string email = Email.Text;
                 int mobilePhone = int.Parse(MPno.Text);
                 int homePhone = int.Parse(MPno.Text);
-                string departmentName = Dname.Text;
-                string designation = Desitxt.Text;
-                string employeeType = emptype.Text;
-                string query_insert = "UPDATE EMPmanagetbl SET firstname = '" + firstName + "',lastname = '" + lastName + "', DOB = '" + dob + "', gender = '" + gender + "',address = '" + address + "',email = '" + email + "',mobilephone = '" + mobilePhone + "', homephone = '" + homePhone + "',departmentName = '" + departmentName + "', designation = '" + designation + "', employeetype = '" + employeeType + "' WHERE   empid ="+ no;
+                string ParentName = Dname.Text;
+                int NIC = int.Parse(Desitxt.Text);
+                int Contactno = int.Parse(emptype.Text);
+                string query_insert = "UPDATE studentdetails SET firstname = '" + firstName + "',lastname = '" + lastName + "', dob = '" + dob + "', gender = '" + gender + "',address = '" + address + "',email = '" + email + "',mobilephone = '" + mobilePhone + "', homephone = '" + homePhone + "',ParentName = '" + ParentName + "', NIC = '" + NIC + "', Contactno = '" + Contactno + "' WHERE   RegNo ="+ no;
 
                 conn.Open();
                 SqlCommand cmdn = new SqlCommand(query_insert, conn);
@@ -156,7 +156,7 @@ namespace Project_1
             {
               string no = EmpNOcb.Text;
 
-                string query_insert = "DELETE FROM EMPmanagetbl WHERE empid = " + no + "";
+                string query_insert = "DELETE FROM studentdetails WHERE empid = " + no + "";
                 conn.Open();
                 SqlCommand cmdn = new SqlCommand(query_insert, conn);
                 cmdn.ExecuteNonQuery();
@@ -209,9 +209,9 @@ namespace Project_1
         private void LoadEmployeeDetails(string empId)
         {
             conn.Open();
-            string query_select = "SELECT * FROM EMPmanagetbl WHERE empid = @empId";
+            string query_select = "SELECT * FROM studentdetails WHERE RegNO = @RegNO";
             SqlCommand cmdn = new SqlCommand(query_select, conn);
-            cmdn.Parameters.AddWithValue("@empId", empId);
+            cmdn.Parameters.AddWithValue("@RegNO", empId);
 
             SqlDataReader row = cmdn.ExecuteReader();
 
@@ -236,9 +236,9 @@ namespace Project_1
                 Email.Text = row["email"].ToString();
                 MPno.Text = row["mobilephone"].ToString();
                 HPno.Text = row["homephone"].ToString();
-                Dname.Text = row["departmentName"].ToString();
-                Desitxt.Text = row["designation"].ToString();
-                emptype.Text = row["employeetype"].ToString();
+                Dname.Text = row["ParentName"].ToString();
+                Desitxt.Text = row["NIC"].ToString();
+                emptype.Text = row["Contactno"].ToString();
             }
 
             conn.Close();

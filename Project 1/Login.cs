@@ -17,9 +17,10 @@ namespace Project_1
         {
             InitializeComponent();
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=""EMS for pjct"";Integrated Security=True");
-        
-     
+        SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=Student_DB;Integrated Security=True");
+
+
+
 
         private void clearbtn_Click(object sender, EventArgs e)
         {
@@ -57,6 +58,11 @@ namespace Project_1
             {
                 Application.Exit();         
             }
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
